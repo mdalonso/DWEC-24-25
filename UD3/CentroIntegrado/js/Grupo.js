@@ -47,13 +47,12 @@ export default class Grupo{
     }
 
     toString(){
-        let cadena="<table border='1'>"
-        cadena+= `<tr><td>${this.#nomGrupo} - ${this.#grupo} - nº Alumnos: ${this.#nAlumnos}></td</tr>`;
+        let cadena=`<tr><td>${this.#nomGrupo} - ${this.#grupo} - nº Alumnos: ${this.#nAlumnos}</td</tr>`;
 
         for (let i=0;i<this.#aAlumnos.length;i++){
             cadena+=`${this.#aAlumnos[i].toString()}`;
         }
-        cadena+="</table>";
+
         return cadena;
     }
 
@@ -81,7 +80,7 @@ export default class Grupo{
         this.#aAlumnos.sort((a,b)=>a.nomApe.localeCompare(b.nomApe));
     }
 
-    
+
 
 
 }

@@ -33,7 +33,8 @@ export default class Profesor extends Persona{
     }
 
     toString(){
-        return `${super.toString()} Especialidad ${this.#especialidad} antigüedad=${this.#antig} años`;
+        //return `${super.toString()} Especialidad ${this.#especialidad} antigüedad=${this.#antig} años`;
+        return `<tr><td>${super.toString()} Especialidad=${this.#especialidad} antigüedad= ${this.#antig} años</td></tr>`;
     }
 }
 

@@ -51,20 +51,20 @@ export default class Centro{
         cadena+=`<tr><td><h1>${this.#nombre}</h1></td></tr>`;
         
         cadena+=`<tr><td>Grupos</td></tr>`;
-        
+        console.log(this.#aComunidad[0]);
         if (this.#aComunidad[0]!=undefined){
 
-            for (let i=0;i<this.#aComunidad[0].length;i++){
+            //for (let i=0;i<this.#aComunidad[0].length;i++){
                 cadena+=this.#aComunidad[0].toString();
-            }
+            //}
         }
         
         cadena+=`<tr><td>Profesores</td></tr>`;
 
         if (this.#aComunidad[1]!=undefined){
-            for (let i=0;i<this.#aComunidad[1].length;i++){
+            //for (let i=0;i<this.#aComunidad[1].length;i++){
                 cadena+=this.#aComunidad[1].toString();
-            }
+            //}
 
         }
 
