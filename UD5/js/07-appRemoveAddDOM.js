@@ -1,13 +1,15 @@
 "use strict"
 
 //AÑADIR Y ELIMINAR NODOS AL DOM**********************************************
+
+//USO DE LA LIBRERÍA SWEET ALERT
 //Codificar esto después de ver el resto del código
 //El evento mostrará un aviso utilizando la librería sweetalert2
 //Ver el enlace a la librería en Moodle.
 
 const evento=()=>{
   Swal.fire({
-    position: 'top-end',
+    position: 'center',
     icon: 'success',
     title: 'Nuevo Enlace',
     showConfirmButton: false,
@@ -24,22 +26,35 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //Tiene 4 hijos (los 4 enlaces)
     console.log(navegacion.children);
 
-//ELIMINAREMOS EL PRIMER NODO HIJO ACCEDIENDO A ÉL DE DIFERENTES FORMAS**************
+//ELIMINAREMOS EL PRIMER NODO HIJO DE DIFERENTES FORMAS**************
 //(descomentar cada forma para probarlas)
-//1º forma: firstElementChild acceder al primer hijo que sea un nodo de tipo element
-    //console.log(navegacion.firstElementChild);
+//1 forma: eliminar el nodo: desde el propio nodo.
+//Debemos localizarlo y posteriormente aplicarle un remove().
+
+  const nodoBorrar=document.querySelector(".navegacion a");
+  console.log(nodoBorrar);
+
+  //nodoBorrar.remove();
+
+  //Otras formas de localizar el nodo es utilizando Traversing...
+//Con firstElementChild acceder al primer hijo que sea un nodo de tipo element
+//Hasta ahora, para localizar un nodo, hemos utilizado propiedades del propio nodo.
+//Otra forma de localizar nodos es mediante las relaciones padre-hijo (TRAVERSING)
+    //console.log(navegacion.firstElementChild);//Utiliza traversing para localizar un elemento
 //El método remove() elimina el nodo 
     //navegacion.firstElementChild.remove();
 //Ahora sólo tiene 3 hijos
     //console.log(navegacion.children);
 
-//2º forma: A través de la colección children
+//A través de la colección children
     //navegacion.children[0].remove()
 
-//3º FORMA: removeChild(): Eliminar el nodo desde el padre. 
+//2º FORMA: removeChild(): Eliminar el nodo desde el padre. 
 //Se le pasa como parámetro el nodo que se quiere eliminar
-    //navegacion.removeChild(navegacion.children[0]);
+    //navegacion.removeChild(nodoBorrar);
+    //navegacion.removeChild(navegacion.children[0]);//Localizando el nodo a borrar con traversing.
 
+//USO DE SWEET ALERT
 //CREAREMOS UN NUEVO ENLACE DENTRO DEL ELEMENTO.
 //Utilizamos createElement que recibe como parámetro una cadena que indica el el tipo del nodo que se va a
 //crear mediante su etiqueta HTML.
@@ -54,7 +69,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 //Añadiremos el enlace en la posición que queramos...
 //...añadir al menú al final con appendChild
-//  navegacion.appendChild(enlace); //(descomentar esta línea para probarlo)
+  //navegacion.appendChild(enlace); //(descomentar esta línea para probarlo)
 
 //...añadirlo en otra posición
 //En este caso lo añadiremos entre el primer y el segundo enlace

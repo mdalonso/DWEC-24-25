@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", ()=>{
 
 //TRAVERSING DOM, Recorrer el árbol del DOM a través de sus relaciones padre-hijo y hermano-hermano*******************
-//- parenNode
+//- parentNode
 //- chidNodes[index]
 //- firstChild
 //- lastChild
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
       console.log(navegacion);
 
 //childNodes es una colección que contiene todos los hijos de un elemento (incluye todos los tipos de nodo)
-      console.log(navegacion.childNodes); //los espacios en blanco son considerados nodos elementos (text, comment)
+      console.log(navegacion.childNodes); //los espacios en blanco y los saltos de línea son considerados nodos elementos (text, comment)
 
 //children es una colección que sólo incluye los nodos de tipo element
       console.log(navegacion.children); //Sólo toma los nodos de tipo element
@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 //Localizamos el primer elemento de clase card (Representar el árbol de este nodo)
       const card=document.querySelector(".card");
       console.log(card)
+      console.log(card.children);//Sólo guarda los hijos directos, no todos los descendientes.
+
 
 //Este es el segundo nodo hijo de tipo element (el children[0] sería el img)
     console.log(card.children[1]); //acceso a la clase info
@@ -55,11 +57,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
 //acceso a nodos a través de sus relaciones de hermanos.
 //previousSibling y nextSibling navegan por listNodes (no por Children) por lo que tiene en cuenta también
 //los tipos de nodos text y coments, no solo los nodos de tipo element
-  console.log(card.parentElement.previousSibling);
+  console.log(card.parentElement.previousSibling);//Se trata de un salto de línea
+  console.log(card.parentElement.previousElementSibling);//Se trata del encabezado h2
 //acceso a hermano siguiente
-  console.log(card.parentElement.nextSibling.nextSibling);
+  console.log(card.parentElement.nextSibling);//Se trata de un salto de línea
+  console.log(card.parentElement.nextSibling.nextSibling);//Sue trata de un comentario
+  console.log(card.parentElement.nextElementSibling);//No hay ningún hermano siguientes que sea de tipo element
 //Navegación
-  card.parentElement.previousSibling.textContent="Cambio hermano traversing"
+  card.parentElement.previousSibling.textContent="Cambio hermano traversing"//Cambia lo que era el salto de línea
+  card.parentElement.previousElementSibling.textContent="Cambio hermano traversing"//Cambia el encabezado, que es el hermano previo de tipo element
 })
 
 
