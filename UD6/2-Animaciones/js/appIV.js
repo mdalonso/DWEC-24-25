@@ -6,10 +6,10 @@ $(() => {
 
     //crear un nuevo atributo en el botón animación1
     //En jquery...
-   // $(".botons:contains('animacion1')").attr("data-clave", "prueba")
+    $(".botons:contains('animacion1')").attr("data-clave", "prueba")
     
    //En JS nativo
-    document.querySelector(".botons").setAttribute("data-clave", "prueba")
+    //document.querySelector(".botons").setAttribute("data-clave", "prueba")
     //acceso al atributo
     console.log( document.querySelector (".botons").getAttribute("data-clave"));
 

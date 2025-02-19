@@ -20,7 +20,7 @@ $(() => {
     //En el evento click se ejecuta una función anónima que invoca a toggle.
     //toggle recibe dos parámetros: velocidad=2000 ms y la función que se ejecutará
     //una vez que toggle se haya resuelto (función FIN)
-    $(".botons:contains('Toogle')").on("click", () => {
+    $(".botons:contains('Toggle')").on("click", () => {
          $("h1").toggle(2000, fin);
     });
 })
