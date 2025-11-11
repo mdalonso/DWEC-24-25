@@ -1,11 +1,15 @@
 "use strict";
+//ESTRUCTURA DEL PATRÓN OBSERVER:
+//- Clase "observadora" que debe reaccionar a un cambio de estado de la clase "sujeto"
+//- Clase "sujeto" que mantiene un estado. Ante un cambio de estado los "observadores" deben responder.
+
 //Objetivo: cada vez que se envíe un mensaje, todos los usuarios confirmarán la recepción del mensaje
 //Se define una clase ServicioDeMensajes que permitirá suscribir
 //a otros objetos para que sean avisados cuando ocurra algún evento.
 
 //Esta clase mantiene un array con todos los objetos suscritos a las
 //notificaciones. Este array estará vacío en un primer momento.
-class ServicioDeMensajes {
+class ServicioDeMensajes {//Clase sujeto
     constructor() {
       this.observadores = [];
     }
@@ -28,7 +32,7 @@ class ServicioDeMensajes {
     }
   }
   //La clase usuario será la plantilla para definir observadores.
-  class Usuario {
+  class Usuario {//Clase observador
     constructor(nombre) {
       this.nombre = nombre;
     }
@@ -50,4 +54,5 @@ class ServicioDeMensajes {
   // "Ana ha recibido el mensaje: Hola, ¿cómo estás?"
   // "Juan ha recibido el mensaje: Hola, ¿cómo estás?"
   
+
 
