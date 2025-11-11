@@ -1,4 +1,5 @@
 "use strict";
+//Objetivo: cada vez que se envíe un mensaje, todos los usuarios confirmarán la recepción del mensaje
 //Se define una clase ServicioDeMensajes que permitirá suscribir
 //a otros objetos para que sean avisados cuando ocurra algún evento.
 
@@ -23,7 +24,7 @@ class ServicioDeMensajes {
     //Los observadores deben tener algún método público que invocar, que es
     //el que recoge la acción con la que responde el observador.
     notificar(mensaje) {
-      this.observadores.forEach(observador => observador.actualizar(mensaje));
+      this.observadores.forEach(observador => observador.responder(mensaje));
     }
   }
   //La clase usuario será la plantilla para definir observadores.
@@ -32,7 +33,7 @@ class ServicioDeMensajes {
       this.nombre = nombre;
     }
   
-    actualizar(mensaje) {
+    responder(mensaje) {
       console.log(`${this.nombre} ha recibido el mensaje: ${mensaje}`);
     }
   }
@@ -49,3 +50,4 @@ class ServicioDeMensajes {
   // "Ana ha recibido el mensaje: Hola, ¿cómo estás?"
   // "Juan ha recibido el mensaje: Hola, ¿cómo estás?"
   
+
