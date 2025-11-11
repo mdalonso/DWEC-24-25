@@ -28,11 +28,14 @@ class Configuracion {
   }
   //Se establece una configuración.
   const config1 = new Configuracion();
-  config1.establecerOpcion("tema", "oscuro");
+  config1.establecerOpcion("USER", "jlperez");
+  config1.establecerOpcion("PORT", 5500);
+  config1.establecerOpcion("BDNAME", "DataBase");
   //Si se desea crear una nueva instancia, vemos que estamos accediendo
   //a la que ya hemos creado previamente.
   const config2 = new Configuracion();
-  console.log(config2.obtenerOpcion("tema"));  // "oscuro"
+  console.log(config2.obtenerOpcion("USER"));  // "oscuro"
   
   console.log(config1 === config2);  // true
+
   
